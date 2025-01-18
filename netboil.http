@@ -1,0 +1,6 @@
+@netboil_HostAddress = http://localhost:5248
+
+GET {{netboil_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
