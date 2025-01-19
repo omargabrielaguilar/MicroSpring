@@ -5,16 +5,16 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copiar los archivos del proyecto
-COPY ["UserApi/UserApi.csproj", "UserApi/"]
+COPY ["UserApi.csproj", "./"]
 
 # Restaurar las dependencias
-RUN dotnet restore "UserApi/UserApi.csproj"
+RUN dotnet restore "UserApi.csproj"
 
 # Copiar el resto del código fuente
 COPY . .
 
 # Publicar la aplicación
-RUN dotnet publish "UserApi/UserApi.csproj" -c Release -o /app/publish
+RUN dotnet publish "UserApi.csproj" -c Release -o /app/publish
 
 # Crear la imagen final
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base

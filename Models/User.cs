@@ -11,6 +11,6 @@ namespace UserApi.Models
     public string Name {get; set;}
     public string LastName {get; set;}
     public string Category {get; set;}
-    public Datetime DateCreated {get; set;}
+    public DateTime DateCreated {get; set;}
   }
 }
